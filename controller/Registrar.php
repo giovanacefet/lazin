@@ -16,14 +16,14 @@ class Registrar
       Transaction::open();
   }
   public function salvar() {
-    if (isset($_POST["filme"]) && isset($_POST["sinopse"]) & isset($_POST["elenco"])) {
+    if (isset($_POST["trajeto"]) && isset($_POST["aeronave"]) & isset($_POST["horario"])) {
         try {
             $conexao = Transaction::get();
             $crud = new Crud();
-            $filme = $conexao->quote($_POST["filme"]);
-            $sinopse = $conexao->quote($_POST["sinopse"]);
-            $elenco = $conexao->quote($_POST["elenco"]);
-            $retorno = $crud->insert("filme", "sinopse", "elenco", "{$filme}", "{$sinopse}", "{$elenco}");
+            $trajeto = $conexao->quote($_POST["trajeto"]);
+            $aeronave = $conexao->quote($_POST["aeronave]);
+            $horario = $conexao->quote($_POST["horario"]);
+            $retorno = $crud->insert("trajeto", "aeronave", "horario", "{$trajeto}", "{$aeronave}", "{$horario}");
         } catch (\Exception $e) {
             $retorno["msg"] = "Ocorreu um erro!".$e->getMessage();
             $retorno["erro"] = true;

@@ -10,7 +10,7 @@ final class Connection
     $type = "mysql";
     $user = "root";
     $pass = "mariadb";
-    $name = "Locadora";
+    $name = "voo";
     $host = "mysql";
     switch ($type) {
       case 'pgsql':

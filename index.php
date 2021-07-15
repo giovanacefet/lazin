@@ -23,7 +23,7 @@ class Aplicacao
   public static function run()
   {
     $layout = new Template("view/layout.html");
-    $conteudo["msg"] = "locadora";
+    $conteudo["msg"] = "voo";
     if (!isset($_GET["acao"])) {
       $class = "Inicio";
     } else {

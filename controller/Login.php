@@ -12,17 +12,17 @@ class Login
   }
 
   public function entrar() {
-    if (isset($_POST["sinopse"]) & isset($_POST["elenco"])) {
+    if (isset($_POST["aeronave"]) & isset($_POST["horario"])) {
         try {
             $conexao = Transaction::get();
             $crud = new Crud();
-            $sinopse = $conexao->quote($_POST["sinopse"]);
-            $elenco = $conexao->quote($_POST["elenco"]);
-            $retorno = $crud->select("*", "sinopse={$sinopse} AND elenco={$elenco}";
+            $aeronave = $conexao->quote($_POST["aeronave"]);
+            $horario = $conexao->quote($_POST["horario"]);
+            $retorno = $crud->select("*", "aeronave={$aeronave} AND horario={$horario}";
             if(!$retorno["erro"]) {
                 new Session;
                 Session::setValue("id", $retorno["msg"][0]["id"])
-                Session::setValue("filme", $retorno["msg"][0]["filme"])
+                Session::setValue("trajeto", $retorno["msg"][0]["trajeto"])
                 header("Location:restrita.php");
             }
         } catch (\Exception $e) {
