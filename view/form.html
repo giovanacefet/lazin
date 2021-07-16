@@ -1,0 +1,36 @@
+<form method="POST" action="?acao=Form&metodo=salvar">
+    <input type="hidden" name = "id" value="{id_filme}" />
+    <div class="form-group row">
+        <label class="col-3" for="nome">T</label>
+        <input
+            type="text"
+            name="voo"
+            id="id"
+            class= "form-control col-9"
+            required
+        />
+    </div>
+
+    <div class="form-group row">
+        <label class="col-3" for="nome">FILME</label>
+        <select name="nome" id="nome" class="form-control col-9" required>
+            <option></option>
+            {nomes}
+            <option value="{id}" {sel}>{nome}</option> 
+            {/nomes}
+        </select>
+    </div>
+    <div class="form-group row">
+        <label class="col-3" for="trajeto">trajeto</label>
+        <textarea name="trajeto" id="trajeto" class="form-control col -9" required >{}</textarea>
+    </div>
+    <div class="form-group row">
+        <label class="col-3" for="sinopse">horario</label>
+        <textarea name="horario" id="horario" class="form-control col -9" required >{}</textarea>
+    </div>
+      
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+
+</form>
